@@ -1,0 +1,15 @@
+def decrypted(string,key):
+    cipher=''
+    for char in string:
+        if char==' ':
+            cipher=cipher+char
+        elif char.isupper():
+            cipher=cipher+chr((ord(char)-key-65)%26+65)
+        else:
+            cipher=cipher+chr((ord(char)-key-97)%26+97)
+    return cipher
+    
+text=input("enter the encrypted msg")
+k=int(input("enter the key"))
+print("the encrypted msg is", text)
+print("the decrypted msg is",decrypted (text, k))
